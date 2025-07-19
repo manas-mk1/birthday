@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="mainimage fade-in">
+    <img src="./img/hbd1.png" alt="Happy Birthday">
+  </div>
+
+  <div class="message-container fade-in">
+    <h1>🎉 Happy Birthday, Sugandhi! 🎂</h1>
+    <br>
+    <p>I didn't know what perfection was until I met you, and now I see it every time I look at you.</p>
+    <p>The way you smile, the way you care, the way you simply exist—everything about you is beautiful. 💖</p>
+  </div>
+
+<div class="collage fade-in">
+  <h2></h2>
+  <div class="collage-container">
+    <img src="./img/photos/photo1.jpg" class="polaroid rotate-left">
+    <img src="./img/photos/photo6.jpg" class="polaroid rotate-right">
+    <img src="./img/photos/photo5.jpg" class="polaroid rotate-left">
+    <img src="./img/photos/photo4.jpg" class="polaroid rotate-right">
+    <!-- Add or duplicate more images as needed -->
+  </div>
+</div>
+
+
+  <div class="balloons">🎈🎈🎈🎈🎈</div>
+<audio autoplay loop>
+  <source src="./music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Trigger confetti blast when page loads
+    window.onload = () => {
+      const duration = 2 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    };
+  </script>
+  
+</body>
+</html>
